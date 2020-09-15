@@ -4,7 +4,7 @@ import (
 	"flag"
 	"os"
 
-	"github.com/STNS/libnss_stns/libstns"
+	"github.com/panda-lab/libnss_stns/libstns"
 )
 
 func main() {

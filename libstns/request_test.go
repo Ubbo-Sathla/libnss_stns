@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/STNS/libnss_stns/cache"
-	"github.com/STNS/libnss_stns/test"
+	"github.com/panda-lab/libnss_stns/cache"
+	"github.com/panda-lab/libnss_stns/test"
 )
 
 type Response struct {

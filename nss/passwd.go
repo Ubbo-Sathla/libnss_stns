@@ -5,7 +5,7 @@ import (
 	"strconv"
 
 	"github.com/STNS/STNS/stns"
-	"github.com/STNS/libnss_stns/libstns"
+	"github.com/panda-lab/libnss_stns/libstns"
 )
 
 /*

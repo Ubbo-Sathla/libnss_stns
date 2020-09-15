@@ -3,7 +3,7 @@ package libstns
 import (
 	"testing"
 
-	"github.com/STNS/libnss_stns/test"
+	"github.com/panda-lab/libnss_stns/test"
 )
 
 // UID,GIDのシフトをテストする

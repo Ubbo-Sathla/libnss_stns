@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/STNS/STNS/stns"
-	"github.com/STNS/libnss_stns/settings"
+	"github.com/panda-lab/libnss_stns/settings"
 )
 
 func convertV1toV3Format(body []byte) (*ResponseFormat, error) {

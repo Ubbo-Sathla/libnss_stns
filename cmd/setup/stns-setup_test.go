@@ -5,8 +5,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/STNS/libnss_stns/libstns"
-	"github.com/STNS/libnss_stns/test"
+	"github.com/panda-lab/libnss_stns/libstns"
+	"github.com/panda-lab/libnss_stns/test"
 )
 
 func TestRun(t *testing.T) {

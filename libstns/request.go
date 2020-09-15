@@ -21,7 +21,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/STNS/libnss_stns/cache"
+	"github.com/panda-lab/libnss_stns/cache"
 )
 
 type Request struct {

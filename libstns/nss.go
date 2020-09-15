@@ -8,8 +8,8 @@ import (
 	"strconv"
 
 	"github.com/STNS/STNS/stns"
-	"github.com/STNS/libnss_stns/cache"
-	"github.com/STNS/libnss_stns/settings"
+	"github.com/panda-lab/libnss_stns/cache"
+	"github.com/panda-lab/libnss_stns/settings"
 )
 
 // http://www.gnu.org/software/libc/manual/html_node/NSS-Modules-Interface.html

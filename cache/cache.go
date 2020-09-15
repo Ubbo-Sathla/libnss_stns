@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/STNS/STNS/stns"
-	"github.com/STNS/libnss_stns/settings"
+	"github.com/panda-lab/libnss_stns/settings"
 	_gocache "github.com/pyama86/go-cache"
 )
 

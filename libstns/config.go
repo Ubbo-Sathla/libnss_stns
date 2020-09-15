@@ -2,7 +2,7 @@ package libstns
 
 import (
 	"github.com/BurntSushi/toml"
-	"github.com/STNS/libnss_stns/settings"
+	"github.com/panda-lab/libnss_stns/settings"
 )
 
 type Config struct {
