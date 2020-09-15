@@ -11,3 +11,4 @@ bin/*
 .bundle/config
 .rake_tasks
 .vagrant/*
+.idea

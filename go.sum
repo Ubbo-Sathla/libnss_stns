@@ -1,0 +1,9 @@
+github.com/BurntSushi/toml v0.3.0/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
+github.com/STNS/STNS v0.0.2-0.20170310010710-9938d2c5e190/go.mod h1:n917ql+N2zf/tTKxRRzM4jNO87Tzko1amRuTOzwByJY=
+github.com/StackExchange/wmi v0.0.0-20170410192909-ea383cf3ba6e/go.mod h1:3eOhrUMpNV+6aFIbp5/iudMxNCF27Vw2OZgy4xEx0Fg=
+github.com/ant0ine/go-json-rest v3.3.2+incompatible/go.mod h1:q6aCt0GfU6LhpBsnZ/2U+mwe+0XB5WStbmwyoPfc+sk=
+github.com/go-ole/go-ole v1.2.0/go.mod h1:7FAglXiTm7HKlQRDeOQ6ZNUHidzCWXuZWq/1dTyBNF8=
+github.com/pyama86/go-cache v0.0.0-20160619073142-5c290c8c42f4/go.mod h1:9FMa8FiA+R4J+tm1MwOi33W+3ln0MMlGklweq4jAV5w=
+github.com/shirou/gopsutil v2.16.13-0.20170702151039-aa0a3bce9d1f+incompatible/go.mod h1:5b4v6he4MtMOwMlS0TUMTu2PcXUg8+E1lC7eC3UO/RA=
+github.com/tredoe/osutil v0.0.0-20161130133508-7d3ee1afa71c/go.mod h1:M/I710pXKQToMdqt/D+mJ4QsnW6WDaajyB6DWFmDXBs=
+golang.org/x/sys v0.0.0-20170718161335-cd2c276457ed/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
