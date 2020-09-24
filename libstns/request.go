@@ -102,6 +102,8 @@ func (r *Request) request() ([]byte, error) {
 				req.Header.Set("Authorization", "token "+r.Config.AuthToken)
 			}
 			log.Printf("%#v\n", req.URL)
+			log.Printf("%#v\n", req.RequestURI)
+
 			r.httpDo(
 				ctx,
 				req,
