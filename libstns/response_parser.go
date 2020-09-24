@@ -3,6 +3,7 @@ package libstns
 import (
 	"encoding/json"
 	"errors"
+	"log"
 	"strings"
 
 	"github.com/STNS/STNS/model"
@@ -79,7 +80,7 @@ func convertV3Format(b []byte, path string, config *Config) (*ResponseFormat, er
 	if len(sp) < 2 {
 		return nil, errors.New("parse error: path specification is insufficient")
 	}
-
+	log.Println(string(b))
 	switch sp[0] {
 	case "user":
 		if sp[1] == "list" {
