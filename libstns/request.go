@@ -116,7 +116,7 @@ func (r *Request) request() ([]byte, error) {
 
 					defer res.Body.Close()
 					body, err := ioutil.ReadAll(res.Body)
-
+					log.Println(string(body))
 					switch res.StatusCode {
 					case http.StatusOK:
 						v2 := regexp.MustCompile(`/v2[/]?$`)
