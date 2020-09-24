@@ -12,15 +12,18 @@ import (
 )
 
 func convertV1toV3Format(body []byte) (*ResponseFormat, error) {
-	var attr stns.Attributes
-	err := json.Unmarshal(body, &attr)
+	var attrs []stns.Attribute
+	err := json.Unmarshal(body, &attrs)
 
 	if err != nil {
 		return nil, err
 	}
-
+	items := stns.Attributes{}
+	for _, u := range attrs {
+		items[u.Name] = u
+	}
 	return &ResponseFormat{
-		attr,
+		items,
 	}, nil
 }
 
