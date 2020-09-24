@@ -7,9 +7,9 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/STNS/STNS/stns"
 	"github.com/panda-lab/libnss_stns/cache"
 	"github.com/panda-lab/libnss_stns/settings"
+	"github.com/panda-lab/libnss_stns/stns"
 )
 
 // http://www.gnu.org/software/libc/manual/html_node/NSS-Modules-Interface.html

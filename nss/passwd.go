@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/STNS/STNS/stns"
 	"github.com/panda-lab/libnss_stns/libstns"
+	"github.com/panda-lab/libnss_stns/stns"
 )
 
 /*

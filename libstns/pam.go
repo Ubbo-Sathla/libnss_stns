@@ -4,7 +4,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/STNS/STNS/stns"
+	"github.com/panda-lab/libnss_stns/stns"
 	"github.com/tredoe/osutil/user/crypt"
 	"github.com/tredoe/osutil/user/crypt/apr1_crypt"
 	"github.com/tredoe/osutil/user/crypt/md5_crypt"
@@ -66,7 +66,7 @@ func (p *Pam) PasswordAuth(user string, password string) int {
 
 	var attr stns.Attribute
 	for _, a := range res.Items {
-		attr = *a
+		attr = a
 		break
 	}
 
