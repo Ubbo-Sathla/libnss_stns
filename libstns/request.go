@@ -124,6 +124,7 @@ func (r *Request) request() ([]byte, error) {
 						switch {
 						// version1
 						case !v2.MatchString(endPoint) && !v3.MatchString(endPoint):
+							log.Printf("vX: %s", string(body))
 							buffer, err := convertV1toV3Format(body)
 							if err != nil {
 								ech <- err
@@ -133,6 +134,8 @@ func (r *Request) request() ([]byte, error) {
 							return
 						// version2
 						case v2.MatchString(endPoint):
+							log.Printf("v2: %s", string(body))
+
 							buffer, err := convertV2toV3Format(body)
 							if err != nil {
 								ech <- err
@@ -141,7 +144,7 @@ func (r *Request) request() ([]byte, error) {
 							rch <- buffer
 							return
 						default:
-							log.Println(string(body))
+							log.Printf("vD: %s", string(body))
 							buffer, err := convertV3Format(body, r.ApiPath, r.Config)
 							if err != nil {
 								ech <- err
