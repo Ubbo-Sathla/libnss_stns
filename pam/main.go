@@ -24,7 +24,7 @@ func main() {
 
 func Init() {
 	runtime.GOMAXPROCS(1)
-	InitLogger(false)
+	InitLogger(true)
 	logger = GetLogger()
 	config, err = libstns.LoadConfig("/etc/stns/libnss_stns.conf")
 	if err != nil {
