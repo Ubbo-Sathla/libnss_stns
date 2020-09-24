@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -18,19 +17,18 @@ func main() {
 	config, err := libstns.LoadConfig("/etc/stns/libnss_stns.conf")
 	if err == nil {
 		flag.Parse()
-		ctx := context.TODO()
 
-		if raw := Fetch(config, ctx, flag.Arg(0)); raw != "" {
+		if raw := Fetch(config, flag.Arg(0)); raw != "" {
 			fmt.Println(raw)
 		}
 	}
 }
 
-func Fetch(config *libstns.Config, ctx context.Context, name string) string {
+func Fetch(config *libstns.Config, name string) string {
 	var res *libstns.ResponseFormat
 	var userKeys string
 
-	r, err := libstns.NewRequest(config, ctx, fmt.Sprintf("/users?name=%s", name))
+	r, err := libstns.NewRequest(config, fmt.Sprintf("/users?name=%s", name))
 	if err != nil {
 		log.Println(err)
 	}

@@ -30,7 +30,7 @@ type Request struct {
 	ResourceType string
 }
 
-func NewRequest(config *Config, ctx context.Context, paths ...string) (*Request, error) {
+func NewRequest(config *Config, paths ...string) (*Request, error) {
 	if len(paths) == 3 && strings.Contains(paths[2], ".") {
 		paths[2] = urlencode(paths[2])
 	}
