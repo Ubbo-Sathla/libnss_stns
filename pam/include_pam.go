@@ -9,6 +9,10 @@ package main
 */
 import "C"
 
+func disablePtrace() bool {
+	return C.disable_ptrace() == C.int(0)
+}
+
 // The reason that separates this method, but in order to avoid a compile error
 
 func getUserName(pamh *C.pam_handle_t, user **C.char) bool {

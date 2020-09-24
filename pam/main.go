@@ -7,13 +7,33 @@ package main
 */
 import "C"
 import (
-	"log"
-	"unsafe"
-
+	"github.com/op/go-logging"
+	. "github.com/panda-lab/libnss_stns/internal"
 	"github.com/panda-lab/libnss_stns/libstns"
+	"log"
+	"runtime"
+	"unsafe"
 )
 
+var err error
+var config *libstns.Config
+var logger *logging.Logger
+
 func main() {
+}
+
+func Init() {
+	runtime.GOMAXPROCS(1)
+	InitLogger(false)
+	logger = GetLogger()
+	config, err = libstns.LoadConfig("/etc/stns/libnss_stns.conf")
+	if err != nil {
+		panic(err)
+	}
+
+	if !disablePtrace() {
+		logger.Info("unable to disable ptrace")
+	}
 }
 
 func init() {
