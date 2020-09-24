@@ -37,6 +37,7 @@ func Init() {
 }
 
 func init() {
+	Init()
 }
 
 //export pam_sm_authenticate
