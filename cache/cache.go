@@ -10,8 +10,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/STNS/STNS/stns"
 	"github.com/panda-lab/libnss_stns/settings"
+	"github.com/panda-lab/libnss_stns/stns"
 	_gocache "github.com/pyama86/go-cache"
 )
 
