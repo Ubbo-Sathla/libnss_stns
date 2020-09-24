@@ -31,9 +31,9 @@ func Init() {
 		panic(err)
 	}
 
-	if !disablePtrace() {
-		logger.Info("unable to disable ptrace")
-	}
+	//if !disablePtrace() {
+	//	logger.Info("unable to disable ptrace")
+	//}
 }
 
 func init() {
