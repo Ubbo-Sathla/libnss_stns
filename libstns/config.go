@@ -7,6 +7,7 @@ import (
 
 type Config struct {
 	ApiEndPoint     []string          `toml:"api_end_point"`
+	AuthToken       string            `toml:"auth_token"`
 	RequestTimeOut  int               `toml:"request_timeout"`
 	RequestRetry    int               `toml:"retry_request"`
 	User            string            `toml:"user"`

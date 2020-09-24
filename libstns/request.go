@@ -98,6 +98,10 @@ func (r *Request) request() ([]byte, error) {
 				req.SetBasicAuth(r.Config.User, r.Config.Password)
 			}
 
+			if r.Config.AuthToken != "" {
+				req.Header.Set("Authorization", "token "+r.Config.AuthToken)
+			}
+
 			r.httpDo(
 				ctx,
 				req,
