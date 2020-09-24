@@ -22,7 +22,7 @@ func main() {
 func Run(config *libstns.Config, name string) error {
 	var res *libstns.ResponseFormat
 
-	r, err := libstns.NewRequest(config, "user", "name", name)
+	r, err := libstns.NewRequest(config, name)
 	if err != nil {
 		return err
 	}
