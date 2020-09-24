@@ -4,9 +4,8 @@ go 1.13
 
 require (
 	github.com/BurntSushi/toml v0.3.0
-	github.com/STNS/STNS v0.0.2-0.20170310010710-9938d2c5e190
+	github.com/STNS/STNS v1.0.0
 	github.com/StackExchange/wmi v0.0.0-20170410192909-ea383cf3ba6e // indirect
-	github.com/ant0ine/go-json-rest v3.3.2+incompatible // indirect
 	github.com/go-ole/go-ole v1.2.0 // indirect
 	github.com/hashicorp/go-syslog v1.0.0
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7
@@ -15,5 +14,5 @@ require (
 	github.com/shirou/w32 v0.0.0-20160930032740-bb4de0191aa4 // indirect
 	github.com/stretchr/testify v1.6.1 // indirect
 	github.com/tredoe/osutil v0.0.0-20161130133508-7d3ee1afa71c
-	golang.org/x/sys v0.0.0-20170718161335-cd2c276457ed // indirect
+
 )

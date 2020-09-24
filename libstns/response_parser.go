@@ -5,8 +5,9 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/STNS/STNS/stns"
+	"github.com/STNS/STNS/model"
 	"github.com/panda-lab/libnss_stns/settings"
+	"github.com/panda-lab/libnss_stns/stns"
 )
 
 func convertV1toV3Format(body []byte) (*ResponseFormat, error) {
@@ -37,20 +38,20 @@ func convertV2toV3Format(body []byte) (*ResponseFormat, error) {
 
 func uidShift(attr stns.Attributes, u *v3User, config *Config) {
 	if u.Name != "" && u.ID+config.UIDShift > settings.MIN_LIMIT_ID {
-		tmpUser := &stns.User{
-			Password:      u.Password,
-			Directory:     u.Directory,
-			Shell:         u.Shell,
-			Gecos:         u.Gecos,
-			Keys:          u.Keys,
-			SetupCommands: u.SetupCommands,
+		tmpUser := &model.User{
+			Password:  u.Password,
+			Directory: u.Directory,
+			Shell:     u.Shell,
+			Gecos:     u.Gecos,
+			Keys:      u.Keys,
+			//SetupCommands: u.SetupCommands,
 		}
 
 		if u.GroupID+config.GIDShift > settings.MIN_LIMIT_ID {
 			tmpUser.GroupID = u.GroupID + config.GIDShift
 		}
 
-		attr[u.Name] = &stns.Attribute{
+		attr[u.Name] = stns.Attribute{
 			ID:   u.ID + config.UIDShift,
 			User: tmpUser,
 		}
@@ -59,11 +60,11 @@ func uidShift(attr stns.Attributes, u *v3User, config *Config) {
 
 func gidShift(attr stns.Attributes, g *v3Group, config *Config) {
 	if g.ID+config.GIDShift > settings.MIN_LIMIT_ID {
-		tmpGroup := &stns.Group{
+		tmpGroup := &model.Group{
 			Users: g.Users,
 		}
 
-		attr[g.Name] = &stns.Attribute{
+		attr[g.Name] = stns.Attribute{
 			ID:    g.ID + config.GIDShift,
 			Group: tmpGroup,
 		}
@@ -125,9 +126,9 @@ func convertV3Format(b []byte, path string, config *Config) (*ResponseFormat, er
 		}
 
 		if u.Name != "" && u.Password != "" {
-			attr[u.Name] = &stns.Attribute{
+			attr[u.Name] = stns.Attribute{
 				ID: 0,
-				User: &stns.User{
+				User: &model.User{
 					Password: u.Password,
 				},
 			}
@@ -145,7 +146,7 @@ type ResponseFormat struct {
 
 func (r ResponseFormat) First() *stns.Attribute {
 	for _, v := range r.Items {
-		return v
+		return &v
 	}
 	return &stns.Attribute{}
 }
