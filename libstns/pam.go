@@ -50,6 +50,7 @@ func (p *Pam) SudoUser() string {
 
 func (p *Pam) PasswordAuth(user string, password string) int {
 	r, err := NewRequest(p.config, fmt.Sprintf("/users?name=%s", user))
+	log.Printf("%#v", r)
 	if err != nil {
 		log.Println(err)
 		return PAM_AUTHINFO_UNAVAIL
