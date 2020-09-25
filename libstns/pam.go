@@ -88,7 +88,7 @@ func (p *Pam) PasswordAuth(user string, password string) int {
 	case strings.HasPrefix(attr.Password, apr1_crypt.MagicPrefix):
 		c = apr1_crypt.New()
 	}
-
+	log.Println(attr.Password, password)
 	err = c.Verify(attr.Password, []byte(password))
 	if err == nil {
 		return PAM_SUCCESS
