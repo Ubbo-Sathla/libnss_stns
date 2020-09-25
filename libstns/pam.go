@@ -56,6 +56,7 @@ func (p *Pam) PasswordAuth(user string, password string) int {
 		return PAM_AUTHINFO_UNAVAIL
 	}
 	res, err := r.GetByWrapperCmd()
+	log.Println(res)
 	if err != nil {
 		log.Println(err)
 		return PAM_AUTHINFO_UNAVAIL
