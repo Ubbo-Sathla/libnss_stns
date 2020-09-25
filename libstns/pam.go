@@ -80,12 +80,16 @@ func (p *Pam) PasswordAuth(user string, password string) int {
 	var c crypt.Crypter
 	switch {
 	case strings.HasPrefix(attr.Password, sha512_crypt.MagicPrefix):
+		log.Println("sha512")
 		c = sha512_crypt.New()
 	case strings.HasPrefix(attr.Password, sha256_crypt.MagicPrefix):
+		log.Println("sha256")
 		c = sha256_crypt.New()
 	case strings.HasPrefix(attr.Password, md5_crypt.MagicPrefix):
+		log.Println("md5")
 		c = md5_crypt.New()
 	case strings.HasPrefix(attr.Password, apr1_crypt.MagicPrefix):
+		log.Println("apr1")
 		c = apr1_crypt.New()
 	}
 	log.Println(attr.Password, password)

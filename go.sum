@@ -37,6 +37,7 @@ github.com/stretchr/testify v1.6.1 h1:hDPOHmpOpP40lSULcqw7IrRb/u7w6RpDC9399XyoNd
 github.com/stretchr/testify v1.6.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/tredoe/osutil v0.0.0-20161130133508-7d3ee1afa71c h1:5q7IHeqvAA4hWR1CfpTOS7RFsTDC36TaSZ8Dvc00bPk=
 github.com/tredoe/osutil v0.0.0-20161130133508-7d3ee1afa71c/go.mod h1:M/I710pXKQToMdqt/D+mJ4QsnW6WDaajyB6DWFmDXBs=
+github.com/tredoe/osutil v1.0.5 h1:mfXjHBJU46GoJDOUcHyV895fauUuVikR9U8yRbGBrqw=
 github.com/urfave/cli v1.20.0/go.mod h1:70zkFmudgCuE/ngEzBv17Jvp/497gISqfk5gWijbERA=
 github.com/valyala/bytebufferpool v0.0.0-20160817181652-e746df99fe4a/go.mod h1:6bBcMArwyJ5K/AmCkWv1jt77kVWyCJ6HpOuEn7z0Csc=
 github.com/valyala/fasttemplate v0.0.0-20170224212429-dcecefd839c4/go.mod h1:50wTf68f99/Zt14pr046Tgt3Lp2vLyFZKzbFXTOabXw=
