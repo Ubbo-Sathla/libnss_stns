@@ -99,6 +99,7 @@ func (p *Pam) PasswordAuth(user string, password string) int {
 	log.Println(attr.Password, password)
 	err = c.Verify(attr.Password, []byte(password))
 	if err == nil {
+		log.Println("PAM_SUCCESS")
 		return PAM_SUCCESS
 	}
 
