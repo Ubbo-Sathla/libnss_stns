@@ -10,7 +10,6 @@ import (
 	"github.com/op/go-logging"
 	. "github.com/panda-lab/libnss_stns/internal"
 	"github.com/panda-lab/libnss_stns/libstns"
-	"log"
 	"runtime"
 	"unsafe"
 )
@@ -44,11 +43,13 @@ func init() {
 func pam_sm_authenticate(pamh *C.pam_handle_t, flags C.int, argc C.int, argv **C.char) C.int {
 	config, err := libstns.LoadConfig("/etc/stns/libnss_stns.conf")
 	if err != nil {
-		log.Println(err)
+		logger.Error(err)
 		return C.PAM_AUTHINFO_UNAVAIL
 	}
 
 	pam := libstns.NewPam(config, int(argc), GoStrings(int(argc), argv))
+
+	logger.Info(pam)
 
 	var user string
 
