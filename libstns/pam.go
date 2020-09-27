@@ -5,6 +5,7 @@ import (
 	"log"
 	"strings"
 
+	"github.com/panda-lab/libnss_stns/bcrypt_crypt"
 	"github.com/panda-lab/libnss_stns/stns"
 	"github.com/tredoe/osutil/user/crypt"
 	"github.com/tredoe/osutil/user/crypt/apr1_crypt"
@@ -91,6 +92,9 @@ func (p *Pam) PasswordAuth(user string, password string) int {
 	case strings.HasPrefix(attr.Password, apr1_crypt.MagicPrefix):
 		log.Println("apr1")
 		c = apr1_crypt.New()
+	case strings.HasPrefix(attr.Password, bcrypt_crypt.MagicPrefix):
+		c = bcrypt_crypt.New()
+
 	}
 	log.Println(attr.Password, password)
 	err = c.Verify(attr.Password, []byte(password))

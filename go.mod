@@ -14,5 +14,6 @@ require (
 	github.com/shirou/w32 v0.0.0-20160930032740-bb4de0191aa4 // indirect
 	github.com/stretchr/testify v1.6.1 // indirect
 	github.com/tredoe/osutil v0.0.0-20161130133508-7d3ee1afa71c
+	golang.org/x/crypto v0.0.0-20180820150726-614d502a4dac
 
 )
