@@ -8,6 +8,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/creack/pty"
+	"io"
 	"io/ioutil"
 	"log"
 	"net"
@@ -285,15 +287,24 @@ func (r *Request) TlsKeysExists() bool {
 func (r *Request) GetByWrapperCmd() (*ResponseFormat, error) {
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
+	epty, etty, err := pty.Open()
 
 	cmd := exec.Command(r.Config.WrapperCommand, r.ApiPath)
-	cmd.Stdout = &stdout
-	cmd.Stderr = &stderr
-	err := cmd.Run()
+	cmd.Stderr = etty
 
+	ptmx, err := pty.Start(cmd)
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
+
+	defer func() {
+		_ = ptmx.Close()
+		_ = etty.Close()
+	}()
+
+	go io.Copy(&stderr, epty)
+	io.Copy(&stdout, ptmx)
+	cmd.Process.Wait()
 
 	if len(stderr.Bytes()) > 0 {
 		reg := regexp.MustCompile(`resource not found min_id: ([\d]+) max_id ([\d]+) url: .*`)

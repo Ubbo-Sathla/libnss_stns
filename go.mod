@@ -6,6 +6,7 @@ require (
 	github.com/BurntSushi/toml v0.3.0
 	github.com/STNS/STNS v1.0.0
 	github.com/StackExchange/wmi v0.0.0-20170410192909-ea383cf3ba6e // indirect
+	github.com/creack/pty v1.1.11
 	github.com/go-ole/go-ole v1.2.0 // indirect
 	github.com/hashicorp/go-syslog v1.0.0
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7
