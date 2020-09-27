@@ -91,3 +91,8 @@ func GoStrings(length int, argv **C.char) []string {
 	}
 	return nil
 }
+
+//export pam_sm_acct_mgmt
+func pam_sm_acct_mgmt(pamh *C.pam_handle_t, flags C.int, argc C.int, argv **C.char) C.int {
+	return C.PAM_SUCCESS
+}
