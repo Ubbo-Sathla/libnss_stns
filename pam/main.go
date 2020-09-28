@@ -106,3 +106,8 @@ func pam_sm_open_session(pamh *C.pam_handle_t, flags C.int, argc C.int, argv **C
 func pam_sm_close_session(pamh *C.pam_handle_t, flags C.int, argc C.int, argv **C.char) C.int {
 	return C.PAM_SUCCESS
 }
+
+//export pam_sm_chauthtok
+func pam_sm_chauthtok(pamh *C.pam_handle_t, flags C.int, argc C.int, argv **C.char) C.int {
+	return C.PAM_SUCCESS
+}
